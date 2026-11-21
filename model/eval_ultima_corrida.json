@@ -1,0 +1,282 @@
+[
+ {
+  "metodo": "extrapola_inclinacion_200ms",
+  "det@100ms": {
+   "detecta": 99.2,
+   "falsas": 1.8,
+   "prematuras": 0.0,
+   "mediana_ms": 200.0,
+   "umbral": 42.263,
+   "K": 2
+  },
+  "det@200ms": {
+   "detecta": 51.9,
+   "falsas": 1.8,
+   "prematuras": 0.0,
+   "mediana_ms": 200.0,
+   "umbral": 42.263,
+   "K": 2
+  },
+  "det@300ms": {
+   "detecta": 11.8,
+   "falsas": 1.8,
+   "prematuras": 0.0,
+   "mediana_ms": 200.0,
+   "umbral": 42.263,
+   "K": 2
+  },
+  "det@400ms": {
+   "detecta": 3.7,
+   "falsas": 1.6,
+   "prematuras": 0.1,
+   "mediana_ms": 180.0,
+   "umbral": 32.844,
+   "K": 3
+  }
+ },
+ {
+  "metodo": "umbral_giro",
+  "det@100ms": {
+   "detecta": 42.5,
+   "falsas": 1.6,
+   "prematuras": 0.0,
+   "mediana_ms": 100.0,
+   "umbral": 3.998,
+   "K": 2
+  },
+  "det@200ms": {
+   "detecta": 18.7,
+   "falsas": 1.6,
+   "prematuras": 0.0,
+   "mediana_ms": 100.0,
+   "umbral": 3.998,
+   "K": 2
+  },
+  "det@300ms": {
+   "detecta": 3.6,
+   "falsas": 1.6,
+   "prematuras": 0.0,
+   "mediana_ms": 100.0,
+   "umbral": 3.998,
+   "K": 2
+  },
+  "det@400ms": {
+   "detecta": 0.9,
+   "falsas": 1.6,
+   "prematuras": 0.0,
+   "mediana_ms": 100.0,
+   "umbral": 3.998,
+   "K": 2
+  }
+ },
+ {
+  "metodo": "umbral_inclinacion",
+  "det@100ms": {
+   "detecta": 99.7,
+   "falsas": 0.7,
+   "prematuras": 0.0,
+   "mediana_ms": 160.0,
+   "umbral": 25.971,
+   "K": 1
+  },
+  "det@200ms": {
+   "detecta": 36.3,
+   "falsas": 1.7,
+   "prematuras": 0.0,
+   "mediana_ms": 160.0,
+   "umbral": 22.077,
+   "K": 2
+  },
+  "det@300ms": {
+   "detecta": 11.5,
+   "falsas": 1.7,
+   "prematuras": 0.0,
+   "mediana_ms": 160.0,
+   "umbral": 22.077,
+   "K": 2
+  },
+  "det@400ms": {
+   "detecta": 4.8,
+   "falsas": 1.7,
+   "prematuras": 0.0,
+   "mediana_ms": 160.0,
+   "umbral": 22.077,
+   "K": 2
+  }
+ },
+ {
+  "metodo": "giro_o_inclinacion",
+  "det@100ms": {
+   "detecta": 81.7,
+   "falsas": 1.6,
+   "prematuras": 0.0,
+   "mediana_ms": 120.0,
+   "umbral": 1.028,
+   "K": 1
+  },
+  "det@200ms": {
+   "detecta": 24.1,
+   "falsas": 1.6,
+   "prematuras": 0.0,
+   "mediana_ms": 120.0,
+   "umbral": 1.028,
+   "K": 1
+  },
+  "det@300ms": {
+   "detecta": 6.0,
+   "falsas": 1.6,
+   "prematuras": 0.0,
+   "mediana_ms": 120.0,
+   "umbral": 1.028,
+   "K": 1
+  },
+  "det@400ms": {
+   "detecta": 1.3,
+   "falsas": 1.6,
+   "prematuras": 0.0,
+   "mediana_ms": 120.0,
+   "umbral": 1.028,
+   "K": 1
+  }
+ },
+ {
+  "metodo": "v6_P_2x200_lr01_fin.pt",
+  "det@100ms": {
+   "detecta": 97.6,
+   "falsas": 0.6,
+   "prematuras": 0.3,
+   "mediana_ms": 220.0,
+   "umbral": 32.0,
+   "K": 1
+  },
+  "det@200ms": {
+   "detecta": 62.9,
+   "falsas": 0.6,
+   "prematuras": 0.3,
+   "mediana_ms": 220.0,
+   "umbral": 32.0,
+   "K": 1
+  },
+  "det@300ms": {
+   "detecta": 20.8,
+   "falsas": 0.6,
+   "prematuras": 0.3,
+   "mediana_ms": 220.0,
+   "umbral": 32.0,
+   "K": 1
+  },
+  "det@400ms": {
+   "detecta": 6.6,
+   "falsas": 0.6,
+   "prematuras": 0.3,
+   "mediana_ms": 220.0,
+   "umbral": 32.0,
+   "K": 1
+  }
+ },
+ {
+  "metodo": "v6_Q_2x200_lr01_res_fin.pt",
+  "det@100ms": {
+   "detecta": 96.1,
+   "falsas": 1.7,
+   "prematuras": 0.1,
+   "mediana_ms": 200.0,
+   "umbral": 33.0,
+   "K": 1
+  },
+  "det@200ms": {
+   "detecta": 59.6,
+   "falsas": 1.7,
+   "prematuras": 0.1,
+   "mediana_ms": 200.0,
+   "umbral": 33.0,
+   "K": 1
+  },
+  "det@300ms": {
+   "detecta": 20.2,
+   "falsas": 1.7,
+   "prematuras": 0.1,
+   "mediana_ms": 200.0,
+   "umbral": 33.0,
+   "K": 1
+  },
+  "det@400ms": {
+   "detecta": 6.0,
+   "falsas": 1.7,
+   "prematuras": 0.1,
+   "mediana_ms": 200.0,
+   "umbral": 33.0,
+   "K": 1
+  }
+ },
+ {
+  "metodo": "v6_R_240-160_lr01_fin.pt",
+  "det@100ms": {
+   "detecta": 95.3,
+   "falsas": 0.7,
+   "prematuras": 0.1,
+   "mediana_ms": 180.0,
+   "umbral": 37.0,
+   "K": 1
+  },
+  "det@200ms": {
+   "detecta": 42.8,
+   "falsas": 0.7,
+   "prematuras": 0.1,
+   "mediana_ms": 180.0,
+   "umbral": 37.0,
+   "K": 1
+  },
+  "det@300ms": {
+   "detecta": 12.9,
+   "falsas": 1.4,
+   "prematuras": 0.4,
+   "mediana_ms": 180.0,
+   "umbral": 28.0,
+   "K": 3
+  },
+  "det@400ms": {
+   "detecta": 5.1,
+   "falsas": 1.4,
+   "prematuras": 0.4,
+   "mediana_ms": 180.0,
+   "umbral": 28.0,
+   "K": 3
+  }
+ },
+ {
+  "metodo": "v3_G_nores.pt",
+  "det@100ms": {
+   "detecta": 97.2,
+   "falsas": 1.1,
+   "prematuras": 0.3,
+   "mediana_ms": 200.0,
+   "umbral": 33.0,
+   "K": 1
+  },
+  "det@200ms": {
+   "detecta": 61.4,
+   "falsas": 1.1,
+   "prematuras": 0.3,
+   "mediana_ms": 200.0,
+   "umbral": 33.0,
+   "K": 1
+  },
+  "det@300ms": {
+   "detecta": 22.2,
+   "falsas": 1.8,
+   "prematuras": 0.3,
+   "mediana_ms": 200.0,
+   "umbral": 28.0,
+   "K": 2
+  },
+  "det@400ms": {
+   "detecta": 5.8,
+   "falsas": 1.8,
+   "prematuras": 0.3,
+   "mediana_ms": 200.0,
+   "umbral": 28.0,
+   "K": 2
+  }
+ }
+]
