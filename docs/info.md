@@ -19,6 +19,21 @@ and how many non-falling episodes triggered it (false alarms capped at 2 %).
 
 Training, export to Verilog and the bit-exact golden model live in the companion repository (Python + PyTorch).
 
+### Results in simulation (1,600 held-out episodes, false alarms capped at 2 % of non-falling episodes)
+
+| Warning required before the fall | Best classic rule | Float MLP (upper bound) | **This chip (400 gates)** |
+|---|---|---|---|
+| >= 100 ms | 99.7 % (tilt > 26 deg) | 99.7 % | **97.6 %** |
+| >= 200 ms | 51.9 % (tilt extrapolation) | 96.3 % | **62.9 %** |
+| >= 300 ms | 11.8 % | 53.9 % | **20.8 %** |
+
+False alarms of the chosen operating point: 0.6 %. Default threshold: margin > 32 votes, K = 1.
+Servos need about 100 ms to react, so every extra 100 ms of warning is what the reflex buys.
+A deeper network (4 x 300 gates) reaches 74 % at 200 ms but needs a 2x2 tile; it is planned for a second chip.
+
+Fall direction is not voted by the network: the chip takes the dominant axis of the projected gravity and its sign
+(corrected for the robot's standing posture), which is right 82-85 % of the time once tilt exceeds ~5 deg.
+
 ## Pinout
 
 | pin | dir | function |

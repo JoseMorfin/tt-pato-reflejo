@@ -23,6 +23,9 @@
 `ifndef UMBRAL_DEF
 `define UMBRAL_DEF 8'sd0
 `endif
+`ifndef K_DEF
+`define K_DEF 3'd3
+`endif
 `ifndef SESGO_Y
 `define SESGO_Y 8'sd8
 `endif
@@ -46,7 +49,7 @@ module tt_um_josemorfin_reflejo (
     listo <= 1'b0;
     if (!rst_n) begin
       ptr <= 0; cptr <= 0; f0 <= 0; f1 <= 0; f2 <= 0;
-      umbral <= `UMBRAL_DEF; K <= 3'd3; umbral_base <= `BASE_DEF; sel <= 3'd0;
+      umbral <= `UMBRAL_DEF; K <= `K_DEF; umbral_base <= `BASE_DEF; sel <= 3'd0;
     end else if (sync) begin
       ptr <= 0; cptr <= 0;
     end else if (wr && cfg) begin
