@@ -5,7 +5,7 @@ project:
   discord:      ""
   description:  "Trained logic gate network that predicts a biped robot fall from IMU frames, with a classic tilt baseline on the same die"
   language:     "Verilog"
-  clock_hz:     50000000
+  clock_hz:     20000000
   tiles: "1x2"
   top_module:  "tt_um_josemorfin_reflejo"
   source_files:
