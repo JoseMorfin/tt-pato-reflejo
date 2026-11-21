@@ -31,6 +31,9 @@
   "//": "https://tinytapeout.com/faq/#how-can-i-map-an-additional-external-clock-to-one-of-the-gpios",
   "CLOCK_PORT": "clk",
 
+  "//": "Reflejo: la red es combinacional y a 50 MHz sobra holgura de tiempo; sintetizar por area (celdas _1 en vez de _2).",
+  "SYNTH_STRATEGY": "AREA 0",
+
   "//": "Configuration docs: https://librelane.readthedocs.io/en/latest/reference/configuration.html",
 
   "//": "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!",

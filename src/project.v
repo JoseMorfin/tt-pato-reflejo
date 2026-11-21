@@ -40,12 +40,12 @@ module tt_um_josemorfin_reflejo (
   wire cfg = uio_in[1], sync = uio_in[2];
 
   // ---------- captura de cuadros y configuracion ----------
-  reg [2:0] ptr; reg [1:0] cptr; reg [39:0] buf_; reg [47:0] f0, f1, f2; reg [1:0] nfr; reg listo;
+  reg [2:0] ptr; reg [1:0] cptr; reg [47:0] f0, f1, f2; reg listo;
   reg signed [7:0] umbral; reg [2:0] K; reg [7:0] umbral_base; reg [2:0] sel;
   always @(posedge clk) begin
     listo <= 1'b0;
     if (!rst_n) begin
-      ptr <= 0; cptr <= 0; buf_ <= 0; f0 <= 0; f1 <= 0; f2 <= 0; nfr <= 0;
+      ptr <= 0; cptr <= 0; f0 <= 0; f1 <= 0; f2 <= 0;
       umbral <= `UMBRAL_DEF; K <= 3'd3; umbral_base <= `BASE_DEF; sel <= 3'd0;
     end else if (sync) begin
       ptr <= 0; cptr <= 0;
@@ -58,18 +58,19 @@ module tt_um_josemorfin_reflejo (
       endcase
       cptr <= cptr + 2'd1;
     end else if (wr) begin
-      if (ptr == 3'd5) begin
-        f2 <= f1; f1 <= f0; f0 <= {ui_in, buf_}; ptr <= 0; listo <= 1'b1;
-        if (nfr != 2'd3) nfr <= nfr + 2'd1;
-      end else begin
-        buf_[8*ptr +: 8] <= ui_in; ptr <= ptr + 3'd1;
-      end
+      // v2 (area): sin bufer; el primer byte de cada cuadro recorre la historia y los bytes van directo a f0.
+      // No hay evaluacion a medio cuadro: 'listo' solo se levanta con el 6.o byte.
+      // v3 (area): registro de corrimiento, sin demultiplexor por indice de byte
+      if (ptr == 3'd0) begin f2 <= f1; f1 <= f0; end
+      f0 <= {ui_in, f0[47:8]};                          // tras 6 bytes: byte k en f0[8k+7:8k]
+      if (ptr == 3'd5) begin ptr <= 0; listo <= 1'b1; end
+      else ptr <= ptr + 3'd1;
     end
   end
 
   // ---------- red de compuertas (combinacional, generada) ----------
   // al inicio, sin historia, el cuadro t-2 se toma igual al actual (como en el entrenamiento)
-  wire [47:0] previo = (nfr >= 2'd3) ? f2 : f0;
+  wire [47:0] previo = f2;                         // v3: al arrancar la historia vale 0 (2 cuadros, robot de pie)
   // 2 clases: votos[0] = no cae, votos[1] = cae.  (v2, 21-nov: la direccion ya no la vota la red, ver abajo)
   wire [2*NB-1:0] votos;
   lgn_red red (.q({previo, f0}), .votos(votos));
